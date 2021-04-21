@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Weapons
 {
@@ -8,6 +9,14 @@ namespace Weapons
     public Weapon CurrentWeapon => weapons[_currentWeaponIndex];
   
     private int _currentWeaponIndex;
+
+    private void Awake()
+    {
+      foreach (Weapon weapon in weapons) 
+        weapon.gameObject.SetActive(false);
+      
+      CurrentWeapon.gameObject.SetActive(true);
+    }
 
     public void SwitchToNextWeapon()
     {
