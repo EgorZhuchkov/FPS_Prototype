@@ -6,16 +6,13 @@ namespace Weapons.WeaponActions
 {
   public class ScopeAction : WeaponAction
   {
-    private static readonly int Scoped = Animator.StringToHash("Scoped");
-    
-    public Animator weaponAnimator;
+    public WeaponAnimator weaponAnimator;
     public GameObject weaponCamera;
     public Camera mainCamera;
     public GameObject scopedOverlay;
     public GameObject crosshair;
     public float scopedFov = 15.0f;
-
-    private bool _scoped;
+    
     private float _defaultFov;
 
     private void Awake() => 
@@ -23,19 +20,29 @@ namespace Weapons.WeaponActions
 
     public override void Perform()
     {
-      _scoped = !_scoped;
-
       StopAllCoroutines();
-      StartCoroutine(ChangeScopeState(_scoped));
+      StartCoroutine(ChangeScopeState(true));
     }
-  
+
+    public override void Cancel()
+    {
+      StopAllCoroutines();
+      StartCoroutine(ChangeScopeState(false));
+    }
+
     private IEnumerator ChangeScopeState(bool scoped)
     {
-      weaponAnimator.SetBool(Scoped, scoped);
       crosshair.SetActive(!scoped);
 
       if (scoped)
+      {
+        weaponAnimator.Aim();
         yield return new WaitForSeconds(.15f);
+      }
+      else
+      {
+        weaponAnimator.StopAim();
+      }
 
       weaponCamera.SetActive(!scoped);
       scopedOverlay.SetActive(scoped);
@@ -44,7 +51,7 @@ namespace Weapons.WeaponActions
 
     private void Reset()
     {
-      weaponAnimator = GetComponent<Animator>();
+      weaponAnimator = GetComponent<WeaponAnimator>();
     }
   }
 }

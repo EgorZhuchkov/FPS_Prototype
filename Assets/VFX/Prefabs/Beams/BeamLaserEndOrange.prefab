@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 404774}
   - component: {fileID: 10855632}
   - component: {fileID: 11413630}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 422908}
   - component: {fileID: 19894304}
   - component: {fileID: 19996200}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4803,7 +4803,7 @@ GameObject:
   - component: {fileID: 436470}
   - component: {fileID: 19819916}
   - component: {fileID: 19931746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ParticleLinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9494,7 +9494,7 @@ GameObject:
   - component: {fileID: 405300}
   - component: {fileID: 19838014}
   - component: {fileID: 19941514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14122,7 +14122,7 @@ GameObject:
   - component: {fileID: 446984}
   - component: {fileID: 19843806}
   - component: {fileID: 19951340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeamLaserEndOrange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18863,7 +18863,7 @@ GameObject:
   - component: {fileID: 409588}
   - component: {fileID: 19847620}
   - component: {fileID: 19909130}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GlowLinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

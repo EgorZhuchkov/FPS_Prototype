@@ -19,5 +19,17 @@ namespace Weapons
       if(secondaryAction != null)
         secondaryAction.Perform();
     }
+
+    public void CancelPrimaryAction()
+    {
+      if (primaryAction != null) 
+        primaryAction.Cancel();
+    }
+
+    public void CancelSecondaryAction()
+    {
+      if(secondaryAction != null)
+        secondaryAction.Cancel();
+    }
   }
 }

@@ -17,7 +17,19 @@ namespace Weapons
     {
       primaryWeaponAction.performed += OnPrimaryWeaponAction;
       secondaryWeaponAction.performed += OnSecondaryWeaponAction;
+      primaryWeaponAction.canceled += OnPrimaryWeaponActionCanceled;
+      secondaryWeaponAction.canceled += OnSecondaryWeaponActionCanceled;
       _weaponHolder = GetComponent<WeaponHolder>();
+    }
+
+    private void OnPrimaryWeaponActionCanceled(InputAction.CallbackContext obj)
+    {
+      _weaponHolder.CurrentWeapon.CancelPrimaryAction();
+    }
+
+    private void OnSecondaryWeaponActionCanceled(InputAction.CallbackContext obj)
+    {
+      _weaponHolder.CurrentWeapon.CancelSecondaryAction();
     }
 
     private void Update()
@@ -43,6 +55,8 @@ namespace Weapons
     {
       primaryWeaponAction.performed -= OnPrimaryWeaponAction;
       secondaryWeaponAction.performed -= OnSecondaryWeaponAction;
+      primaryWeaponAction.canceled -= OnPrimaryWeaponActionCanceled;
+      secondaryWeaponAction.canceled -= OnSecondaryWeaponActionCanceled;
     }
 
     private void OnPrimaryWeaponAction(InputAction.CallbackContext obj)

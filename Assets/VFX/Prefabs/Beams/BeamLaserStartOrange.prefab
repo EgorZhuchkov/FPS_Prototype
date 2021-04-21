@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 406928}
   - component: {fileID: 10820152}
   - component: {fileID: 11421676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 494002}
   - component: {fileID: 19872022}
   - component: {fileID: 19914678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MuzzleForward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4750,7 +4750,7 @@ GameObject:
   - component: {fileID: 19828478}
   - component: {fileID: 19974010}
   - component: {fileID: 8279212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BeamLaserStartOrange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9587,7 +9587,7 @@ GameObject:
   - component: {fileID: 477326}
   - component: {fileID: 19803856}
   - component: {fileID: 19909856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14269,7 +14269,7 @@ GameObject:
   - component: {fileID: 423432}
   - component: {fileID: 19880582}
   - component: {fileID: 19922246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ChargeParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18942,7 +18942,7 @@ GameObject:
   - component: {fileID: 468582}
   - component: {fileID: 19882810}
   - component: {fileID: 19928126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MuzzleSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -39,8 +39,12 @@ namespace Weapons
 
     public void ChargeBeam(Vector3 at)
     {
+      _beamStart.transform.position = at;
       _beamStart.SetActive(true);
     }
+
+    public void CancelCharge() => 
+      _beamStart.SetActive(false);
 
     private IEnumerator DisableAfterDelay(float delay)
     {
