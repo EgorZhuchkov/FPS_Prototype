@@ -37,6 +37,11 @@ namespace Weapons
       StartCoroutine(DisableAfterDelay(duration));
     }
 
+    public void ChargeBeam(Vector3 at)
+    {
+      _beamStart.SetActive(true);
+    }
+
     private IEnumerator DisableAfterDelay(float delay)
     {
       yield return new WaitForSeconds(delay);
