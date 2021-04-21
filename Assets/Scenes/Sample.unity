@@ -705,14 +705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a674e740c9622145ba8398af0d59bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
-  fpsCamera: {fileID: 1462773018}
-  weaponAnimator: {fileID: 0}
-  scopedOverlay: {fileID: 0}
-  crosshair: {fileID: 0}
-  weaponCamera: {fileID: 0}
-  mainCamera: {fileID: 0}
-  scopedFov: 15
+  primaryAction: {fileID: 0}
+  secondaryAction: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1501,8 @@ GameObject:
   - component: {fileID: 2106071300}
   - component: {fileID: 2106071301}
   - component: {fileID: 2106071302}
+  - component: {fileID: 2106071304}
+  - component: {fileID: 2106071303}
   m_Layer: 8
   m_Name: SniperRifle
   m_TagString: Untagged
@@ -1561,14 +1557,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a674e740c9622145ba8398af0d59bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
-  fpsCamera: {fileID: 1462773018}
-  weaponAnimator: {fileID: 0}
-  scopedOverlay: {fileID: 0}
-  crosshair: {fileID: 0}
-  weaponCamera: {fileID: 0}
-  mainCamera: {fileID: 0}
+  primaryAction: {fileID: 2106071304}
+  secondaryAction: {fileID: 2106071303}
+--- !u!114 &2106071303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106071299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db1a9daa31074901a9cb459747e9f2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponAnimator: {fileID: 2106071301}
+  weaponCamera: {fileID: 1346364347}
+  mainCamera: {fileID: 1462773018}
+  scopedOverlay: {fileID: 1328226054}
+  crosshair: {fileID: 1046505219}
   scopedFov: 15
+--- !u!114 &2106071304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106071299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4717ecea74545de9b52e686fa2361b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsCamera: {fileID: 1462773018}
+  muzzle: {fileID: 0}
+  range: 100
+  shotDelay: 3
 --- !u!4 &4490257853541658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4490257326247362, guid: 11aaea5348574644a9eb4f4504fcce3f,
