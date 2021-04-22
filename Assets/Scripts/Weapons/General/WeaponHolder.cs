@@ -6,6 +6,7 @@ namespace Weapons.General
   public class WeaponHolder : MonoBehaviour
   {
     public Weapon currentWeapon;
+    public AudioSource equipAudio;
     
     private readonly Dictionary<string, Weapon> _characterWeapons = new Dictionary<string, Weapon>();
 
@@ -60,6 +61,7 @@ namespace Weapons.General
     {
       _characterWeapons[weaponId].gameObject.SetActive(true);
       currentWeapon = _characterWeapons[weaponId];
+      equipAudio.Play();
     }
   }
 }
