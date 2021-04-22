@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using VFX.Scripts;
 
 namespace Weapons.WeaponActions
 {
@@ -16,9 +17,13 @@ namespace Weapons.WeaponActions
     
     private float _defaultFov;
     private Coroutine _scopeRoutine;
+    private NightVisionImageEffect _nightVision;
 
-    private void Awake() => 
+    private void Awake()
+    {
       _defaultFov = mainCamera.fieldOfView;
+      _nightVision = mainCamera.GetComponent<NightVisionImageEffect>();
+    }
 
     public override void Perform()
     {
@@ -47,6 +52,9 @@ namespace Weapons.WeaponActions
       {
         weaponAnimator.StopAim();
       }
+
+      if (_nightVision)
+        _nightVision.enabled = scoped;
       
       weaponCamera.cullingMask ^= 1 << LayerMask.NameToLayer(WeaponLayer);
       scopedOverlay.SetActive(scoped);
