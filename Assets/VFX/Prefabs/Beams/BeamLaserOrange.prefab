@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475472}
   - component: {fileID: 12045518}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: BeamLaserOrange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,9 +1,11 @@
 using System.Collections;
+using Enemy;
 using UnityEngine;
+using VFX.Scripts;
 
 namespace Weapons
 {
-  [RequireComponent(typeof(ProjectileEffect), typeof(Rigidbody))]
+  [RequireComponent(typeof(Rigidbody))]
   public class WeaponProjectile : MonoBehaviour
   {
     public ProjectileEffect effect;
@@ -36,6 +38,7 @@ namespace Weapons
     public void OnCollisionEnter(Collision other)
     {
       DealDamage(other.gameObject);
+      effect.OnCollision(other.contacts[0].normal);
       gameObject.SetActive(false);
     }
 
@@ -54,19 +57,20 @@ namespace Weapons
 
     private void DealDamage(GameObject target)
     {
-      //TODO
-      Debug.Log($"{target.name} hit");
+      var enemyHealth = target.GetComponent<EnemyHealth>();
+      if (enemyHealth)
+        enemyHealth.TakeDamage(_damage);
     }
-
-    private void Reset() =>
-      effect = GetComponent<ProjectileEffect>();
 
     private void LaunchProjectile(float speed)
     {
       transform.position = _startPosition;
       transform.LookAt(_targetPosition);
       _rb.AddForce(transform.forward * speed);
-      effect.Activate();
+      effect.Instantiate();
     }
+
+    private void Reset() =>
+      effect = GetComponent<ProjectileEffect>();
   }
 }

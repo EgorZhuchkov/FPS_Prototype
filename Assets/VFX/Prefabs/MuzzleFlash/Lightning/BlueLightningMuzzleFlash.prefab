@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 428658}
   - component: {fileID: 19889830}
   - component: {fileID: 19947402}
+  - component: {fileID: 3647081732124758987}
   m_Layer: 10
   m_Name: BlueLightningMuzzleFlash
   m_TagString: Untagged
@@ -4778,6 +4779,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &3647081732124758987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe3d234920cb824fa23a661ba7b0022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3
 --- !u!1 &162656
 GameObject:
   m_ObjectHideFlags: 0

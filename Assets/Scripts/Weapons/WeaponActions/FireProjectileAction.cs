@@ -12,7 +12,7 @@ namespace Weapons.WeaponActions
     public float range = 100.0f;
     public float shotCooldown = 3.0f;
     public float projectileSpeed = 1000.0f;
-    public float damage = 10.0f;
+    public float damage = 50.0f;
 
     private float _lastShotTime = float.MinValue;
     private bool OnCooldown => Time.time - _lastShotTime < shotCooldown;
