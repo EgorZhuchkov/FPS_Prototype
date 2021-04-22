@@ -2,7 +2,6 @@
 ![image](https://user-images.githubusercontent.com/48308710/115747760-3720f880-a39e-11eb-8b0d-8ceabd02c5b0.png)
 
 This project was implemented in Unity as one of my test assignments.
-You can check it out [on my itch page](https://egor-zhuchkov.itch.io/fps-prototype).
 ### Main features:
 1. First person character controller
 2. Two animated weapons:
