@@ -39,9 +39,7 @@ namespace Weapons.WeaponActions
       projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * projectileSpeed);
     }
 
-    public override void Cancel()
-    {
-    }
+    public override void Cancel() { }
 
     private void Reset()
     {

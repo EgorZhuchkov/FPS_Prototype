@@ -45,6 +45,18 @@ namespace Weapons.WeaponActions
       _chargeCoroutine = StartCoroutine(ShootAfterDelay(chargeDuration));
     }
 
+    private void CancelCharge()
+    {
+      if (weaponAnimator.State != AnimatorState.Charge) 
+        return;
+      
+      weaponAnimator.CancelCharge();
+      beam.CancelCharge();
+      _lastShotTime = float.MinValue;
+      if (_chargeCoroutine != null)
+        StopCoroutine(_chargeCoroutine);
+    }
+
     private IEnumerator ShootAfterDelay(float delay)
     {
       yield return new WaitForSeconds(delay);
@@ -62,18 +74,6 @@ namespace Weapons.WeaponActions
         beam.Fire(muzzle.transform.position, fpsCamera.transform.forward * range);
 
       shotAudio.Play();
-    }
-
-    private void CancelCharge()
-    {
-      if (weaponAnimator.State != AnimatorState.Charge) 
-        return;
-      
-      weaponAnimator.CancelCharge();
-      beam.CancelCharge();
-      _lastShotTime = float.MinValue;
-      if (_chargeCoroutine != null)
-        StopCoroutine(_chargeCoroutine);
     }
 
     private bool IsHitting(out RaycastHit hit)

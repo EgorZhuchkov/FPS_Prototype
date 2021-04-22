@@ -15,22 +15,23 @@ namespace Weapons.WeaponActions
     public float scopedFov = 15.0f;
     
     private float _defaultFov;
+    private Coroutine _scopeRoutine;
 
-    private void Awake()
-    {
+    private void Awake() => 
       _defaultFov = mainCamera.fieldOfView;
-    }
 
     public override void Perform()
     {
-      StopAllCoroutines();
-      StartCoroutine(ChangeScopeState(true));
+      if(_scopeRoutine != null)
+        StopCoroutine(_scopeRoutine);
+      _scopeRoutine = StartCoroutine(ChangeScopeState(true));
     }
 
     public override void Cancel()
     {
-      StopAllCoroutines();
-      StartCoroutine(ChangeScopeState(false));
+      if(_scopeRoutine != null)
+        StopCoroutine(_scopeRoutine);
+      _scopeRoutine = StartCoroutine(ChangeScopeState(false));
     }
 
     private IEnumerator ChangeScopeState(bool scoped)
