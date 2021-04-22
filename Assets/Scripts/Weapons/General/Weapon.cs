@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using Weapons.WeaponActions;
 
-namespace Weapons
+namespace Weapons.General
 {
   public class Weapon : MonoBehaviour
   {
     public WeaponAction primaryAction;
     public WeaponAction secondaryAction;
+    public WeaponId weaponId;
+    public PickableWeaponItem pickableWeapon;
 
     public void PerformPrimaryAction()
     {
@@ -31,5 +33,8 @@ namespace Weapons
       if(secondaryAction != null)
         secondaryAction.Cancel();
     }
+
+    private void Reset() => 
+      weaponId = GetComponent<WeaponId>();
   }
 }

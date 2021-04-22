@@ -1,7 +1,7 @@
 using Animations;
 using UnityEngine;
 
-namespace Weapons
+namespace Weapons.General
 {
   public class WeaponAnimator : MonoBehaviour, IAnimationStateReader
   {

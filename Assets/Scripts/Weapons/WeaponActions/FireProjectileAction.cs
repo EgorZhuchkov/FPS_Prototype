@@ -1,4 +1,5 @@
 using UnityEngine;
+using Weapons.General;
 
 namespace Weapons.WeaponActions
 {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using VFX.Scripts;
+using Weapons.General;
 
 namespace Weapons.WeaponActions
 {
@@ -12,7 +13,6 @@ namespace Weapons.WeaponActions
     public Camera weaponCamera;
     public Camera mainCamera;
     public GameObject scopedOverlay;
-    public GameObject crosshair;
     public float scopedFov = 15.0f;
     
     private float _defaultFov;
@@ -25,46 +25,44 @@ namespace Weapons.WeaponActions
       _nightVision = mainCamera.GetComponent<NightVisionImageEffect>();
     }
 
-    public override void Perform()
-    {
-      if(_scopeRoutine != null)
-        StopCoroutine(_scopeRoutine);
-      _scopeRoutine = StartCoroutine(ChangeScopeState(true));
-    }
+    public override void Perform() => 
+      _scopeRoutine = StartCoroutine(Aim());
 
-    public override void Cancel()
-    {
-      if(_scopeRoutine != null)
-        StopCoroutine(_scopeRoutine);
-      _scopeRoutine = StartCoroutine(ChangeScopeState(false));
-    }
-
-    private IEnumerator ChangeScopeState(bool scoped)
-    {
-      crosshair.SetActive(!scoped);
-
-      if (scoped)
-      {
-        weaponAnimator.Aim();
-        yield return new WaitForSeconds(.15f);
-      }
-      else
-      {
-        weaponAnimator.StopAim();
-      }
-
-      if (_nightVision)
-        _nightVision.enabled = scoped;
-      
-      weaponCamera.cullingMask ^= 1 << LayerMask.NameToLayer(WeaponLayer);
-      scopedOverlay.SetActive(scoped);
-      mainCamera.fieldOfView = scoped ? scopedFov : _defaultFov;
-    }
+    public override void Cancel() => 
+      CancelAim();
 
     private void Reset()
     {
       weaponAnimator = GetComponent<WeaponAnimator>();
       mainCamera = Camera.main;
+    }
+
+    private IEnumerator Aim()
+    {
+      weaponAnimator.Aim();
+      yield return new WaitForSeconds(.15f);
+      if (_nightVision)
+        _nightVision.enabled = true;
+      
+      weaponCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer(WeaponLayer));
+      scopedOverlay.SetActive(true);
+      weaponCamera.fieldOfView = scopedFov;
+      mainCamera.fieldOfView = scopedFov;
+    }
+
+    private void CancelAim()
+    {
+      if(_scopeRoutine != null)
+        StopCoroutine(_scopeRoutine);
+      
+      weaponAnimator.StopAim();
+      if (_nightVision)
+        _nightVision.enabled = false;
+      
+      weaponCamera.cullingMask |=  1 << LayerMask.NameToLayer(WeaponLayer);
+      scopedOverlay.SetActive(false);
+      mainCamera.fieldOfView = _defaultFov;
+      weaponCamera.fieldOfView = _defaultFov;
     }
   }
 }
