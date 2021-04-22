@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 13502792}
   - component: {fileID: 5433472}
   - component: {fileID: 11423980}
+  - component: {fileID: 6595191640741310601}
   m_Layer: 10
   m_Name: BlueShockwaveOBJ
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 182656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,7 +54,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 0.4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5433472
 Rigidbody:
@@ -86,5 +87,16 @@ MonoBehaviour:
   impactParticle: {fileID: 191726, guid: 3477ee01f804e8845939c1fede24260f, type: 3}
   projectileParticle: {fileID: 127764, guid: ff4ab17eee7544e48a5a65c2e232d183, type: 3}
   muzzleParticle: {fileID: 148596, guid: 4a655ad86d1fbd648bb35a9b74bdab24, type: 3}
-  trailParticles: []
-  impactNormal: {x: 0, y: 0, z: 0}
+--- !u!114 &6595191640741310601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4edafbc8bf453da49a67facbe91b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 11423980}
