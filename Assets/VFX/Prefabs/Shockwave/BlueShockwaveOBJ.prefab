@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 13502792}
   - component: {fileID: 5433472}
   - component: {fileID: 11423980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BlueShockwaveOBJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 444118}
   - component: {fileID: 19876518}
   - component: {fileID: 19977428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4711,7 +4711,7 @@ GameObject:
   - component: {fileID: 494510}
   - component: {fileID: 19939324}
   - component: {fileID: 19847002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9409,7 +9409,7 @@ GameObject:
   m_Component:
   - component: {fileID: 461092}
   - component: {fileID: 10845916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9502,7 +9502,7 @@ GameObject:
   - component: {fileID: 495688}
   - component: {fileID: 19809632}
   - component: {fileID: 19913066}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnergySphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14210,7 +14210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 485274}
   - component: {fileID: 8267604}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BlueShockwaveProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14344,7 +14344,7 @@ GameObject:
   - component: {fileID: 492008}
   - component: {fileID: 19868654}
   - component: {fileID: 19936272}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18972,7 +18972,7 @@ GameObject:
   - component: {fileID: 402422}
   - component: {fileID: 19854096}
   - component: {fileID: 19931800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

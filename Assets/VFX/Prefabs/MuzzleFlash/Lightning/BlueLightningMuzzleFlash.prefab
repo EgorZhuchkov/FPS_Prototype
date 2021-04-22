@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 428658}
   - component: {fileID: 19889830}
   - component: {fileID: 19947402}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BlueLightningMuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4789,7 +4789,7 @@ GameObject:
   - component: {fileID: 411640}
   - component: {fileID: 19806712}
   - component: {fileID: 19929304}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BigFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9583,7 +9583,7 @@ GameObject:
   - component: {fileID: 458440}
   - component: {fileID: 19865240}
   - component: {fileID: 19976398}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlashLinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

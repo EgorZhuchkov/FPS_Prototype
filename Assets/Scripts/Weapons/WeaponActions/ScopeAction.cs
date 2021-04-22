@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 namespace Weapons.WeaponActions
 {
   public class ScopeAction : WeaponAction
   {
+    private const string WeaponLayer = "Weapon";
+    
     public WeaponAnimator weaponAnimator;
-    public GameObject weaponCamera;
+    public Camera weaponCamera;
     public Camera mainCamera;
     public GameObject scopedOverlay;
     public GameObject crosshair;
@@ -15,8 +16,10 @@ namespace Weapons.WeaponActions
     
     private float _defaultFov;
 
-    private void Awake() => 
+    private void Awake()
+    {
       _defaultFov = mainCamera.fieldOfView;
+    }
 
     public override void Perform()
     {
@@ -43,8 +46,8 @@ namespace Weapons.WeaponActions
       {
         weaponAnimator.StopAim();
       }
-
-      weaponCamera.SetActive(!scoped);
+      
+      weaponCamera.cullingMask ^= 1 << LayerMask.NameToLayer(WeaponLayer);
       scopedOverlay.SetActive(scoped);
       mainCamera.fieldOfView = scoped ? scopedFov : _defaultFov;
     }
@@ -52,6 +55,7 @@ namespace Weapons.WeaponActions
     private void Reset()
     {
       weaponAnimator = GetComponent<WeaponAnimator>();
+      mainCamera = Camera.main;
     }
   }
 }

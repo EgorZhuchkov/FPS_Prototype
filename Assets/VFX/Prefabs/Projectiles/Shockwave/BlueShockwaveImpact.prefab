@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 496996}
   - component: {fileID: 19802838}
   - component: {fileID: 19999350}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4679,7 +4679,7 @@ GameObject:
   - component: {fileID: 449088}
   - component: {fileID: 19806986}
   - component: {fileID: 19920460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9320,7 +9320,7 @@ GameObject:
   - component: {fileID: 430382}
   - component: {fileID: 19851352}
   - component: {fileID: 19915330}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ParticleLines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13925,7 +13925,7 @@ GameObject:
   - component: {fileID: 494330}
   - component: {fileID: 19861358}
   - component: {fileID: 19945808}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18782,7 +18782,7 @@ GameObject:
   - component: {fileID: 8287520}
   - component: {fileID: 19927080}
   - component: {fileID: 19891770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BlueShockwaveImpact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23623,7 +23623,7 @@ GameObject:
   - component: {fileID: 454158}
   - component: {fileID: 10880664}
   - component: {fileID: 11488414}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
