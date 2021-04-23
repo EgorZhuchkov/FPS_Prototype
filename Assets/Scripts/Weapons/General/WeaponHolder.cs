@@ -12,7 +12,7 @@ namespace Weapons.General
 
     private void Awake()
     {
-      var weapons = FindObjectsOfType<Weapon>();
+      var weapons = GetComponentsInChildren<Weapon>(true);
       foreach (Weapon weapon in weapons)
       {
         _characterWeapons.Add(weapon.weaponId.id, weapon);

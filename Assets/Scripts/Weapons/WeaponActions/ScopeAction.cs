@@ -1,68 +1,41 @@
-﻿using System.Collections;
+﻿using FpsController;
 using UnityEngine;
-using VFX.Scripts;
 using Weapons.General;
 
 namespace Weapons.WeaponActions
 {
   public class ScopeAction : WeaponAction
   {
-    private const string WeaponLayer = "Weapon";
-    
     public WeaponAnimator weaponAnimator;
-    public Camera weaponCamera;
-    public Camera mainCamera;
-    public GameObject scopedOverlay;
-    public float scopedFov = 15.0f;
-    
-    private float _defaultFov;
-    private Coroutine _scopeRoutine;
-    private NightVisionImageEffect _nightVision;
+    public FirstPersonLook fpsLook;
+    public float scopedSensitivity = 0.05f;
 
-    private void Awake()
-    {
-      _defaultFov = mainCamera.fieldOfView;
-      _nightVision = mainCamera.GetComponent<NightVisionImageEffect>();
-    }
+    private float _defaultSensitivity;
 
-    public override void Perform() => 
-      _scopeRoutine = StartCoroutine(Aim());
+    private void Awake() => 
+      _defaultSensitivity = fpsLook.sensitivity;
 
-    public override void Cancel() => 
-      CancelAim();
+    public override void Perform() => Aim();
+
+    public override void Cancel() => StopAim();
 
     private void Reset()
     {
       weaponAnimator = GetComponent<WeaponAnimator>();
-      mainCamera = Camera.main;
+      if (!(Camera.main is null))
+        fpsLook = Camera.main.GetComponent<FirstPersonLook>();
     }
 
-    private IEnumerator Aim()
+    private void Aim()
     {
       weaponAnimator.Aim();
-      yield return new WaitForSeconds(.15f);
-      if (_nightVision)
-        _nightVision.enabled = true;
-      
-      weaponCamera.cullingMask &=  ~(1 << LayerMask.NameToLayer(WeaponLayer));
-      scopedOverlay.SetActive(true);
-      weaponCamera.fieldOfView = scopedFov;
-      mainCamera.fieldOfView = scopedFov;
+      fpsLook.sensitivity = scopedSensitivity;
     }
 
-    private void CancelAim()
+    private void StopAim()
     {
-      if(_scopeRoutine != null)
-        StopCoroutine(_scopeRoutine);
-      
       weaponAnimator.StopAim();
-      if (_nightVision)
-        _nightVision.enabled = false;
-      
-      weaponCamera.cullingMask |=  1 << LayerMask.NameToLayer(WeaponLayer);
-      scopedOverlay.SetActive(false);
-      mainCamera.fieldOfView = _defaultFov;
-      weaponCamera.fieldOfView = _defaultFov;
+      fpsLook.sensitivity = _defaultSensitivity;
     }
   }
 }
